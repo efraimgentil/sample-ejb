@@ -1,30 +1,25 @@
 package me.efraimgentil.simpleejbconsumer.ws;
 
 import javax.ejb.EJB;
-import javax.ejb.Local;
+import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
-import me.efraimgentil.simple.service.SelectWorldService;
+import me.efraimgentil.simple.service.SelectWorldServiceRemote;
 
 
-@Local
+@Stateless
 @Path("/simple-hello")
-public class SimpleHelloWS {
+public class SimpleHelloWSImpl {
 	
-	
-	@EJB(lookup="java:global/simple-ear/simple-core-impl-1.0/SelectWorldServiceImpl") SelectWorldService selectWorld;
+	@EJB(lookup="java:global/simple-ear/simple-core-impl-1.0/SelectWorldServiceRemoteImpl") SelectWorldServiceRemote selectWorld;
 	
 	@GET
 	@Path("/")
 	public Response printMessage() {
-		
 		String result = "Restful example : " + selectWorld.selectWorld() ;
-
 		return Response.status(200).entity(result).build();
-
 	}
 
 	
