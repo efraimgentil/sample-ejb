@@ -4,13 +4,14 @@
 	
 	<parent>
 		<groupId>me.efraimgentil</groupId>
-		<artifactId>simple</artifactId>
+		<artifactId>sampleejb</artifactId>
 		<version>1.0</version>
-		<relativePath>../simple/pom.xml</relativePath>
+		<relativePath>../sampleejb/pom.xml</relativePath>
 	</parent>
 	
-	<artifactId>simple-core-impl</artifactId>
-	<name>Simple Core Impl</name>
+	<artifactId>sampleejb-core-impl</artifactId>
+	<name>Sampleejb Core Impl</name>
+	<version>1.0</version>
 	<packaging>ejb</packaging>
 
 
@@ -18,8 +19,8 @@
 
 		<dependency>
 			<groupId>me.efraimgentil</groupId>
-			<artifactId>simple-core</artifactId>
-			<version>${simple.core.version}</version>
+			<artifactId>sampleejb-core</artifactId>
+			<version>${sampleejb.core.version}</version>
 		</dependency>
 
 		<dependency>

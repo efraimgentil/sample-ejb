@@ -1,20 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.efraimgentil</groupId>
-  <artifactId>simple</artifactId>
+  <artifactId>sampleejb</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
-  <name>simple</name>
+  <name>sampleejb</name>
   
   <modules>
-  	<module>simple-core</module>
-  	<module>simple-core-impl</module>
-  	<module>simple-ear</module>
-  	<module>simple-ejb-consumer</module>
+  	<module>sampleejb-core</module>
+  	<module>sampleejb-core-impl</module>
+  	<module>sampleejb-ear</module>
+  	<module>sampleejb-consumer</module>
   </modules>
   
   <properties>
-  	<simple.core.version>1.0</simple.core.version>
+  		<sampleejb.core.version>1.0</sampleejb.core.version>
   
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.7</maven.compiler.target>

@@ -4,11 +4,11 @@
 
 	<parent>
 		<groupId>me.efraimgentil</groupId>
-		<artifactId>simple</artifactId>
+		<artifactId>sampleejb</artifactId>
 		<version>1.0</version>
 	</parent>
 
-	<artifactId>simple-ear</artifactId>
+	<artifactId>sampleejb-ear</artifactId>
 	<packaging>ear</packaging>
 
 
@@ -16,15 +16,15 @@
 
 		<dependency>
 			<groupId>me.efraimgentil</groupId>
-			<artifactId>simple-core-impl</artifactId>
-			<version>${simple.core.version}</version>
+			<artifactId>sampleejb-core-impl</artifactId>
+			<version>${sampleejb.core.version}</version>
             <type>ejb</type>
 		</dependency>
 		
 		<dependency>
 			<groupId>me.efraimgentil</groupId>
-			<artifactId>simple-core</artifactId>
-			<version>${simple.core.version}</version>
+			<artifactId>sampleejb-core</artifactId>
+			<version>${sampleejb.core.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -40,12 +40,12 @@
 					<modules>
 						<jarModule>
 							<groupId>me.efraimgentil</groupId>
-							<artifactId>simple-core</artifactId>
+							<artifactId>sampleejb-core</artifactId>
 							<includeInApplicationXml>true</includeInApplicationXml>
 						</jarModule>
 						<ejbModule>
 							<groupId>me.efraimgentil</groupId>
-							<artifactId>simple-core-impl</artifactId>
+							<artifactId>sampleejb-core-impl</artifactId>
 						</ejbModule>
 					</modules>
 

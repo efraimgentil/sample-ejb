@@ -9,7 +9,7 @@ import me.efraimgentil.simple.service.SelectWorldServiceRemote;
 public class SelectWorldServiceRemoteImpl implements SelectWorldServiceRemote {
 
 	public String selectWorld() {
-		return "Hello World Remote";
+		return "Hello World Remote Haduken";
 	}
 
 }
