@@ -8,6 +8,15 @@
 			your bean @Remote interfaces works fine apparently
 			
 			With this u will depend of the deployment of the ear early an then u can deploy your application 
+			, the down side of this aproach is that when u undeploy your ejb your application will also be stoped
+			
+			Note: Aparently this is not a bug, the spec of the EJB 3.1 session 3.2.2 Local Clients says: 
+			
+			'''Access to an enterprise bean through the local client view is only required to be supported 
+			   for local clients packaged within the same application as the enterprise bean that provides
+			   the local client view. Compliant implementations of this specification may optionally support
+			   access to the local client view of an enterprise bean from a local client packaged in a 
+			   different application'''
 		-->
 		<dependencies>
 			<module name="deployment.sampleejb-ear.ear.sampleejb-core-1.0.jar" />
