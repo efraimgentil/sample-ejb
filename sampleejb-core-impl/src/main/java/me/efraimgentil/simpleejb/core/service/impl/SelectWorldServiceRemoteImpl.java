@@ -1,8 +1,8 @@
-package me.efraimgentil.simple.service.impl;
+package me.efraimgentil.simpleejb.core.service.impl;
 
 import javax.ejb.Stateless;
 
-import me.efraimgentil.simple.service.SelectWorldServiceRemote;
+import me.efraimgentil.sampleejb.core.service.SelectWorldServiceRemote;
 
 
 @Stateless

@@ -1,4 +1,4 @@
-package me.efraimgentil.simple.service;
+package me.efraimgentil.sampleejb.core.service;
 
 import javax.ejb.Local;
 import javax.ejb.Remote;

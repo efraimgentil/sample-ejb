@@ -1,9 +1,9 @@
-package me.efraimgentil.simple.service.impl;
+package me.efraimgentil.simpleejb.core.service.impl;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 
-import me.efraimgentil.simple.service.SelectWorldService;
+import me.efraimgentil.sampleejb.core.service.SelectWorldService;
 
 @Local( SelectWorldService.class )
 @Stateless

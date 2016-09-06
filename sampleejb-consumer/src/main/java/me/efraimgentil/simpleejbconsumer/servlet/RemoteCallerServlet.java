@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import me.efraimgentil.simple.service.SelectWorldService;
-import me.efraimgentil.simple.service.SelectWorldServiceRemote;
+import me.efraimgentil.sampleejb.core.service.SelectWorldService;
+import me.efraimgentil.sampleejb.core.service.SelectWorldServiceRemote;
+import me.efraimgentil.simpleejbconsumer.KnownEJBS;
 
 
-@WebServlet(urlPatterns ={ "/simple-hello" } )
-public class SimpleHelloServlet extends HttpServlet {
+@WebServlet(urlPatterns ={ "/remote-caller" } )
+public class RemoteCallerServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -5997309121831466595L;
 	
-	@EJB(lookup="java:global/sampleejb-ear/sampleejb-core-impl-1.0/SelectWorldServiceRemoteImpl") SelectWorldServiceRemote selectWorld;
+	@EJB(lookup= KnownEJBS.SelectWorldServiceRemote ) SelectWorldServiceRemote selectWorld;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)

@@ -16,7 +16,12 @@
 			<groupId>me.efraimgentil</groupId>
 			<artifactId>sampleejb-core</artifactId>
 			<version>${sampleejb.core.version}</version>
-			<scope>provided</scope>
+			<!-- Mark as provided if you want to test the @Local injection -->
+			<!--
+			 do not forget to remove the initial "_" from the _jboss-deployment-structure.xml file
+			 in the WEB-INF
+			 -->
+<!-- 			<scope>provided</scope> -->
 		</dependency>
 
 		<dependency>
