@@ -19,7 +19,7 @@ public class SimpleHelloServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -5997309121831466595L;
 	
-	@EJB(lookup="java:global/simple-ear/simple-core-impl-1.0/SelectWorldServiceRemoteImpl") SelectWorldServiceRemote selectWorld;
+	@EJB(lookup="java:global/sampleejb-ear/sampleejb-core-impl-1.0/SelectWorldServiceRemoteImpl") SelectWorldServiceRemote selectWorld;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)

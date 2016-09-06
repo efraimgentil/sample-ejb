@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
+	<deployment>
+		<!-- 
+			Solves a nasty bug in Jboss EAP 6.3, when your app has the jar with 
+			the @Local interfaces and the EAR also has it, when u try to inject @Local 
+			beans it will throw a IllegalStateException, and u will not be able to instantiate 
+			your bean @Remote interfaces works fine apparently
+			
+			With this u will depend of the deployment of the ear early an then u can deploy your application 
+		-->
+		<dependencies>
+			<module name="deployment.sampleejb-ear.ear.sampleejb-core-1.0.jar" />
+		</dependencies>
+	</deployment>
+</jboss-deployment-structure>
