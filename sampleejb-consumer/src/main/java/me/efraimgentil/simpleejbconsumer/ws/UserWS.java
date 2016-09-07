@@ -32,10 +32,17 @@ public class UserWS {
 		return Response.status(Status.OK).entity( user ).build();
 	}
 	
+	/**
+	 * Here will throws a RuntimeException because the findUsers is not implemented yet 
+	 * , the exception will be handler by the RuntimeExceptionMapper.class
+	 * see that when u implements the service in the sambleejc-core-impl and deploy the ear again
+	 * it will start working gracefully =)
+	 */
 	@GET
 	@Path("/")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response findUsers(){
+		
 		List<User> findUsers = userService.findUsers();
 		return Response.status(Status.OK).entity( findUsers ).build();
 	}

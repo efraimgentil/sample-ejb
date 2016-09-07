@@ -1,5 +1,6 @@
 package me.efraimgentil.simpleejb.core.service.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -13,6 +14,7 @@ public class UserServiceRemoteImpl implements UserServiceRemote {
 	@Override
 	public List<User> findUsers() {
 		throw new RuntimeException( "Not supported yet");
+//		return Collections.emptyList();
 	}
 
 	@Override
