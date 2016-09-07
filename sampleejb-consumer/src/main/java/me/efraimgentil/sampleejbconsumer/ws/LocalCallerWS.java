@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer.ws;
+package me.efraimgentil.sampleejbconsumer.ws;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -7,7 +7,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 import me.efraimgentil.sampleejb.core.service.SelectWorldService;
-import me.efraimgentil.simpleejbconsumer.KnownEJBS;
+import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 @Stateless
 @Path(value="/local-caller")

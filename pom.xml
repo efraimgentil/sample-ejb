@@ -11,6 +11,7 @@
   	<module>sampleejb-core-impl</module>
   	<module>sampleejb-ear</module>
   	<module>sampleejb-consumer</module>
+  	<module>sampleejb-war</module>
   </modules>
   
   <properties>

@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer.ws;
+package me.efraimgentil.sampleejbconsumer.ws;
 
 import javax.ejb.Stateless;
 import javax.naming.InitialContext;
@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 import me.efraimgentil.sampleejb.core.service.SelectWorldServiceRemote;
-import me.efraimgentil.simpleejbconsumer.KnownEJBS;
+import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 
 

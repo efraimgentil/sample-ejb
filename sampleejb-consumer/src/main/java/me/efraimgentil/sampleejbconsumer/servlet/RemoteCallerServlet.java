@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer.servlet;
+package me.efraimgentil.sampleejbconsumer.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import me.efraimgentil.sampleejb.core.service.SelectWorldService;
 import me.efraimgentil.sampleejb.core.service.SelectWorldServiceRemote;
-import me.efraimgentil.simpleejbconsumer.KnownEJBS;
+import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 
 @WebServlet(urlPatterns ={ "/remote-caller" } )

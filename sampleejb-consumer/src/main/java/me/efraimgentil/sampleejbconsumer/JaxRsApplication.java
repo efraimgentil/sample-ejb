@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer;
+package me.efraimgentil.sampleejbconsumer;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

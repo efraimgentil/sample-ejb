@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer.ws;
+package me.efraimgentil.sampleejbconsumer.ws;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.StatusType;
 
 import me.efraimgentil.sampleejb.core.model.User;
 import me.efraimgentil.sampleejb.core.service.UserServiceRemote;
-import me.efraimgentil.simpleejbconsumer.KnownEJBS;
+import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 @Stateless
 @Path("/user")

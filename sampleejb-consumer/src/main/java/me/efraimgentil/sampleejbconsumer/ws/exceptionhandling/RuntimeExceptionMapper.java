@@ -1,4 +1,4 @@
-package me.efraimgentil.simpleejbconsumer.ws.exceptionhandling;
+package me.efraimgentil.sampleejbconsumer.ws.exceptionhandling;
 
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
