@@ -9,6 +9,7 @@
 	<artifactId>sampleejb-war</artifactId>
 	<packaging>war</packaging>
 	<name>sampleejb war</name>
+	<version>${sampleejb.war.version}</version>
 
 	<dependencies>
 		

@@ -6,12 +6,65 @@
 <h:head></h:head> 
 <body> 
 	
-	Hello
+	<style>
+		form label{
+			display:block;
+		}
+		
+		form input{
+			margin-bottom: 10px;
+		}
+		
+		.error{
+			color: red;
+			
+		}
+	</style>
+	
+	<ui:param name="bean" value="#{applicationMapperrRemoteCallerMB}" />
+	
+	 
 	
 	<br/> 
-	<h:outputText value="Bean instance: #{applicationMapperrRemoteCallerMB}" />
+	<h:outputText value="Bean instance: #{bean}" />
 	<br/>
-	<h:outputText value="App user: #{applicationMapperrRemoteCallerMB.user}" />
+	<h:outputText value="Service instance: #{bean.service}" />
+	
+	<br/>  <br/>
+	
+	<div style="border: 1px solid black; color: green">
+		<h:outputText value="Add some key/value here and u will se then in the 'consumer' project as well, because both are injecting the same singleton to consume" />
+	</div>
+	<fieldset>
+		<legend>Cached values</legend>  
+		<h:panelGroup id="keyGroup">
+			<ul>
+				<ui:repeat var="key" value="#{bean.keys}">
+					<li><h:outputText value="#{key}" />:<h:outputText value="#{bean.getValue(key)}" /></li>
+				</ui:repeat>
+			</ul>
+		</h:panelGroup>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Add new value</legend>
+		<h:form id="form" prependId="false">
+			
+			<h:messages errorClass="error" />
+			<div>
+				<h:outputLabel value="Key" for="key" />
+				<h:inputText id="key" label="Key" value="#{bean.key}" required="true" />
+			</div>
+			<div>
+				<h:outputLabel value="Value" for="val" />
+				<h:inputText id="val" label="Value" value="#{bean.value}" required="true" />
+			</div>
+			<h:commandButton action="#{bean.putInCache}" value="Add">
+				<f:ajax render=":keyGroup :form" execute="@form"  />
+			</h:commandButton>
+		</h:form>
+	</fieldset>
+	
 	
 	
 	

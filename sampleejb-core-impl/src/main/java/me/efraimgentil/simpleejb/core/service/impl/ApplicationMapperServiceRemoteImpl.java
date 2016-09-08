@@ -1,6 +1,8 @@
 package me.efraimgentil.simpleejb.core.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.ejb.Singleton;
@@ -27,6 +29,11 @@ public class ApplicationMapperServiceRemoteImpl implements ApplicationMapperServ
 	@Override
 	public void putValue(String key, Object object) {
 		cacheMap.put(key, object);
+	}
+
+	@Override
+	public List<String> getKeys() {
+		return new ArrayList<>( cacheMap.keySet() );
 	}
 
 }

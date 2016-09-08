@@ -6,8 +6,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+import me.efraimgentil.sampleejb.core.KnownEJBS;
 import me.efraimgentil.sampleejb.core.service.SelectWorldService;
-import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 @Stateless
 @Path(value="/local-caller")

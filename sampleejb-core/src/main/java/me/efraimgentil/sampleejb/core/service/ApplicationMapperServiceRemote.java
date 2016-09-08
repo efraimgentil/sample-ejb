@@ -1,11 +1,14 @@
 package me.efraimgentil.sampleejb.core.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.Remote;
 
 @Remote
 public interface ApplicationMapperServiceRemote extends Serializable {
+	
+	List<String> getKeys();
 	
 	Object getValue(String key);
 	

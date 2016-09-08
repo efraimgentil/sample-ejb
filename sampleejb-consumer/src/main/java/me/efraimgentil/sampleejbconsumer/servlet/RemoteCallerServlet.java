@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import me.efraimgentil.sampleejb.core.service.SelectWorldService;
+import me.efraimgentil.sampleejb.core.KnownEJBS;
 import me.efraimgentil.sampleejb.core.service.SelectWorldServiceRemote;
-import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 
 @WebServlet(urlPatterns ={ "/remote-caller" } )

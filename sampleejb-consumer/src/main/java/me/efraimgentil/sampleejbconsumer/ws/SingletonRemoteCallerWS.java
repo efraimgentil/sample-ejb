@@ -9,9 +9,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import me.efraimgentil.sampleejb.core.KnownEJBS;
 import me.efraimgentil.sampleejb.core.model.User;
 import me.efraimgentil.sampleejb.core.service.ApplicationMapperServiceRemote;
-import me.efraimgentil.sampleejbconsumer.KnownEJBS;
 
 @Singleton
 @Path("/singleton-remote-caller")
