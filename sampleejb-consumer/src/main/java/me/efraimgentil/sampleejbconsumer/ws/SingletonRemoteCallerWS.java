@@ -44,5 +44,12 @@ public class SingletonRemoteCallerWS {
 		appMapper.putValue("someKey", userToCache );
 		return Response.status(Status.OK).entity( userToCache ).build();
 	}
+	
+	@GET
+	@Path("/keys")
+	@Produces( MediaType.APPLICATION_JSON )
+	public Response getAllKeys(){
+		return Response.status(Status.OK).entity( appMapper.getKeys() ).build();
+	}
 
 }
