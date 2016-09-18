@@ -4,6 +4,17 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
 	<display-name>Archetype Created Web Application</display-name>
+	
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>me.efraimgentil.sampleejbconsumer.ws.filters.CorsFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/rest/*</url-pattern>
+	</filter-mapping>
+	
 <!-- 	<context-param>
 		<param-name>resteasy.jndi.resources</param-name>
 		<param-value>java:module/SimpleHelloWSImpl</param-value>
