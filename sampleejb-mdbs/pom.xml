@@ -6,14 +6,10 @@
 		<artifactId>sampleejb</artifactId>
 		<version>1.0</version>
 	</parent>
-	<artifactId>sampleejb-consumer</artifactId>
-	<packaging>war</packaging>
-	<name>Sample EJB Consumer</name>
+	<artifactId>sampleejb-mdbs</artifactId>
+	<name>sampleejb-mdbs</name>
+	<version>${sampleejb.mdbs.version}</version>
 
-	<properties>
-
-		<resteasy-version>2.3.7.Final</resteasy-version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -27,21 +23,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jaxrs</artifactId>
-			<version>${resteasy-version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson-provider</artifactId>
-			<version>${resteasy-version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
@@ -50,13 +31,12 @@
 
 	</dependencies>
 
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 
 
 
 	</build>
-
-
 
 </project>

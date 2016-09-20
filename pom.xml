@@ -12,15 +12,17 @@
   	<module>sampleejb-ear</module>
   	<module>sampleejb-consumer</module>
   	<module>sampleejb-war</module>
+  	<module>sampleejb-mdbs</module>
   </modules>
   
   <properties>
   		<sampleejb.core.version>1.0</sampleejb.core.version>
+  		<sampleejb.mdbs.version>1.0</sampleejb.mdbs.version>
   		<sampleejb.war.version>1.0</sampleejb.war.version>
   
         <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
   
 </project>
