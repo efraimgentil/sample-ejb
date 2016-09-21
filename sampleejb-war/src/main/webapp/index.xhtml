@@ -6,6 +6,9 @@
 <h:head></h:head> 
 <body> 
 	
+	
+	<ui:include src="/_menu.xhtml" />
+	
 	<style>
 		form label{
 			display:block;
@@ -22,8 +25,6 @@
 	</style>
 	
 	<ui:param name="bean" value="#{applicationMapperrRemoteCallerMB}" />
-	
-	 
 	
 	<br/> 
 	<h:outputText value="Bean instance: #{bean}" />

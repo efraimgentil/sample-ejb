@@ -4,3 +4,5 @@ target
 *.class
 .classpath
 .settings
+.tern-project
+*/.tern-project
