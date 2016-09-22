@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>me.efraimgentil</groupId>
+		<artifactId>samplejee</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>samplejee-jsf</artifactId>
+	<packaging>war</packaging>
+	<name>samplejee jsf</name>
+	<version>${samplejee.jsf.version}</version>
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-core</artifactId>
+			<version>${samplejee.core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		
+	</build>
+</project>

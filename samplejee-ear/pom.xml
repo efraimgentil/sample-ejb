@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>me.efraimgentil</groupId>
+		<artifactId>samplejee</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>samplejee-ear</artifactId>
+	<packaging>ear</packaging>
+
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-jsf</artifactId>
+			<version>${samplejee.jsf.version}</version>
+            <type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-core-impl</artifactId>
+			<version>${samplejee.core.version}</version>
+            <type>ejb</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-mdbs</artifactId>
+			<version>${samplejee.mdbs.version}</version>
+            <type>ejb</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-core</artifactId>
+			<version>${samplejee.core.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+	
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<!-- configuration elements goes here -->
+
+					<modules>
+						<jarModule>
+							<groupId>me.efraimgentil</groupId>
+							<artifactId>samplejee-core</artifactId>
+							<includeInApplicationXml>true</includeInApplicationXml>
+						</jarModule>
+						<ejbModule>
+							<groupId>me.efraimgentil</groupId>
+							<artifactId>samplejee-core-impl</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>me.efraimgentil</groupId>
+							<artifactId>samplejee-mdbs</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>me.efraimgentil</groupId>
+							<artifactId>samplejee-jsf</artifactId>
+						</webModule>
+					</modules>
+
+					<jboss>
+
+					</jboss>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
