@@ -18,7 +18,7 @@
   <properties>
   		<sampleejb.core.version>1.0</sampleejb.core.version>
   		<sampleejb.mdbs.version>1.0</sampleejb.mdbs.version>
-  		<sampleejb.war.version>1.0</sampleejb.war.version>
+  		<sampleejb.jsf.version>1.0</sampleejb.jsf.version>
   
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
