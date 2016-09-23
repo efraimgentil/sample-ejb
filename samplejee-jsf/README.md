@@ -107,3 +107,40 @@ If any updateModels methods called renderResponse on the current FacesContext in
 
 ** Render response phase **: During this phase, the JSF asks container/application server to render the page if the application is using JSP pages. For initial request, the components represented on the page will be added to the component tree as the JSP container executes the page. If this is not an initial request, the component tree is already built so components need not to be added again. In either case, the components will render themselves as the JSP container/Application server traverses the tags in the page.
 After the content of the view is rendered, the response state is saved so that subsequent requests can access it and it is available to the restore view phase.
+
+You can configure a listener to monitor the phases creating a class that implements the javax.faces.event.PhaseListener interface, and configure the listener in the faces-config.xml
+
+```java
+public class MyRestoreViewPhaseListener implements PhaseListener {
+
+	@Override
+	public void afterPhase(PhaseEvent event) {
+		System.out.println("View restored");
+	}
+
+	@Override
+	public void beforePhase(PhaseEvent event) {
+		System.out.println("Restoring the view");
+	}
+
+	@Override
+	public PhaseId getPhaseId() {
+		return PhaseId.RESTORE_VIEW; //Here you specify with phase it will listen
+	}
+
+}
+```
+
+```xml
+<?xml version="1.0"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+	...
+	<lifecycle>
+		<phase-listener>me.efraimgentil.samplejeejsf.listener.MyRestoreViewPhaseListener</phase-listener>
+		<phase-listener>me.efraimgentil.samplejeejsf.listener.MyRenderResponsePhaseListener</phase-listener>
+	</lifecycle>
+	...
+</faces-config>
+``` 
