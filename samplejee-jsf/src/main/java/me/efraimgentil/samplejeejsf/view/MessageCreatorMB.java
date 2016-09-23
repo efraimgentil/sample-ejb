@@ -32,6 +32,8 @@ public class MessageCreatorMB implements Serializable {
 			FacesContext.getCurrentInstance().addMessage("", new FacesMessage( FacesMessage.SEVERITY_INFO, msg  , msg ) );
 		} catch (JMSException e) {
 			e.printStackTrace();
+			String msg = e.getMessage();
+			FacesContext.getCurrentInstance().addMessage("", new FacesMessage( FacesMessage.SEVERITY_ERROR, msg  , msg ) );
 		}
 	}
 
