@@ -8,4 +8,8 @@
 		<phase-listener>me.efraimgentil.samplejeejsf.listener.MyRestoreViewPhaseListener</phase-listener>
 		<phase-listener>me.efraimgentil.samplejeejsf.listener.MyRenderResponsePhaseListener</phase-listener>
 	</lifecycle>
+	
+	<factory>
+		<exception-handler-factory>me.efraimgentil.samplejeejsf.handler.CustomExceptionHandlerFactory</exception-handler-factory>
+	</factory>
 </faces-config>

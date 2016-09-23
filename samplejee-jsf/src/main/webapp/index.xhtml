@@ -9,9 +9,18 @@
 	<ui:include src="/_menu.xhtml" />
 	<h:outputText value=" Hello " />
 	
+	
+	
 	<h:form>
-		<h:commandButton value="A">
-			<f:ajax></f:ajax>
+	 	
+		<h:messages />
+	
+		<h:commandButton action="#{requestMB.throwNumberFormat}" value="Throw number format exception">
+			<f:ajax render="@form" ></f:ajax>
+		</h:commandButton>
+		
+		<h:commandButton action="#{requestMB.throwException}" value="Throw exception">
+			<f:ajax render="@form"></f:ajax>
 		</h:commandButton>
 	</h:form>
 </body> 

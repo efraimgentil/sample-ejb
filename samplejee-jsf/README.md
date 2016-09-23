@@ -82,6 +82,21 @@ public class MyManagedBean implements Serializable { //ViewScoped and SessionSco
 
 The beans also respects the java bean rules, so to access or set an attribute you need the public get/set  methods
 
+```xml
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head></h:head> 
+<body> 
+	<!-- To access the bean in the xhtml file you use the name of the bean if u didn't specify any name in the annotation, the bean name will be the class name with the first letter in lowercase -->
+	<h:outputText value=" Hello #{myManagedBean.name}" />
+	<!-- it will use the getName method to access the attribute -->
+</body> 
+</html>
+```
+
+
 ## JSF Lifecycle
 
 The jsf application life cycle consist of six phases
@@ -108,7 +123,9 @@ If any updateModels methods called renderResponse on the current FacesContext in
 ** Render response phase **: During this phase, the JSF asks container/application server to render the page if the application is using JSP pages. For initial request, the components represented on the page will be added to the component tree as the JSP container executes the page. If this is not an initial request, the component tree is already built so components need not to be added again. In either case, the components will render themselves as the JSP container/Application server traverses the tags in the page.
 After the content of the view is rendered, the response state is saved so that subsequent requests can access it and it is available to the restore view phase.
 
-You can configure a listener to monitor the phases creating a class that implements the javax.faces.event.PhaseListener interface, and configure the listener in the faces-config.xml
+Reference: https://www.tutorialspoint.com/jsf/jsf_life_cycle.htm
+
+You can configure a listener to monitor the phases, you just need creating a class that implements the javax.faces.event.PhaseListener interface, and configure the listener in the faces-config.xml
 
 ```java
 public class MyRestoreViewPhaseListener implements PhaseListener {
