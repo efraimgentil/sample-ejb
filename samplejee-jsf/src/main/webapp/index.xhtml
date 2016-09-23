@@ -3,9 +3,16 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
-<h:head></h:head> 
-<body> 
+<h:head></h:head>
+<body>  
+	A A
 	<ui:include src="/_menu.xhtml" />
 	<h:outputText value=" Hello " />
+	
+	<h:form>
+		<h:commandButton value="A">
+			<f:ajax></f:ajax>
+		</h:commandButton>
+	</h:form>
 </body> 
 </html>

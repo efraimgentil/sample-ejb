@@ -42,7 +42,8 @@ but you will see this file often with some configuration related to jsf.
 </faces-config>
 ```
 
-To work with JSF you will be using .xhtml files, is the same of html files but with more rigid rules about the tags, to create a simple page see
+To work with JSF you will be using .xhtml files, is the same of html files but with more rigid rules about the tags, to create a simple page see the next example,
+be aware about the tag "h:head" instead of "head" it is used so jsf can include some of their javascript libraries as needed
 
 ```xml
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -55,4 +56,24 @@ To work with JSF you will be using .xhtml files, is the same of html files but w
 </body> 
 </html>
 ```
+ 
+## Managed Beans
+
+With JSF you can create ManagedBeans to control your views and maintain states or control the view flow, in the same view you can have one or more managedBean, the beans can have diferents scopes like RequestScoped live for one request, ViewScoped live while in the same view, SessionScoped live while in the same session or  ApplicationScoped lives for the entire application life time.
+Be aware of that in JSF 2.2 you should use the @Named annotation to mark your beans, and use the annotations of the package "javax.enterprise.context" to say the scope of your bean, except for the @ViewScoped annotation that the package is "javax.faces.view.ViewScoped"
+
+**if you try to use the annotations of the package "javax.faces.bean" with the @Named annotation it will not works as spected**	
+
+```java
+//...
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+@Named
+@ViewScoped
+public class MyManagedBean implements Serializable {
+	//...
+}
+``` 
+ 
  
