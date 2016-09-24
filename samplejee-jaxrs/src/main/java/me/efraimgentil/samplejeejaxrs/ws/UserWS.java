@@ -24,8 +24,8 @@ import me.efraimgentil.samplejeejaxrs.jms.UserDelivery;
 @Path("/user")
 public class UserWS {
 	
-	@EJB(lookup=KnownEJBS.UserServiceRemote)
-	UserServiceRemote userService;
+//	@EJB(lookup=KnownEJBS.UserServiceRemote)
+//	UserServiceRemote userService;
 	
 	@EJB
 	UserDelivery delivery;
@@ -34,7 +34,7 @@ public class UserWS {
 	@Path("/{id}")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getUser(@PathParam(value ="id") Integer id){
-		User user = userService.getUser(id);
+		User user = null; // userService.getUser(id);
 		return Response.status(Status.OK).entity( user ).build();
 	}
 	
@@ -48,7 +48,7 @@ public class UserWS {
 	@Path("/")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response findUsers(){
-		List<User> findUsers = userService.findUsers();
+		List<User> findUsers = null ;// userService.findUsers();
 		return Response.status(Status.OK).entity( findUsers ).build();
 	}
 	

@@ -27,5 +27,4 @@ public class UserDelivery {
 		jmsContext.createProducer().send(destination, om );
 	}
 	
-	
 }
