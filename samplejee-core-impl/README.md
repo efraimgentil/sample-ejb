@@ -39,20 +39,45 @@ public class HelloWorldImpl implements HelloWorld {
 }
 ```
 
-Now you are not obligated to declare a interface, you can create a bean also without it
-
+To create a asynchronous , you just need to annotate your method with the @Asynchronous
 ```java
 @LocalBean
 @Stateless
-public class HelloWorldImpl{
+public class AsyncLocalBean {
 
+	@Asynchronous
+	public Future<String> asyncHello() throws InterruptedException{
+		Thread.sleep(10000L);
+		System.out.println("OK ?");
+		return new AsyncResult<>("Hello");
+	}
+	
+}
+```
+
+
+**Stateful**
+The Stateful session bean, as the name suggests, maintains state, they keep track of the client through session, only one client can access the bean at time, also these beans can be passivated by the container, if they are not accessed for a long time, with that freeing some memory
+
+```java
+//Assume that are diferent files
+@Local
+public interface StatefulHelloWorld{
+
+	String helloWorld();
+	
+}
+//Assume that are diferent files
+@Stateful
+public class StatefulHelloWorldImpl implements StatefulHelloWorld {
+	
+	private Integer callCount = 0;
+	
 	public String helloWorld() {
-		return "Hello world local";
+		return "Hello world local " + (++callCount);
 	}
 
 }
-``` 
-
-
+```
 
 
