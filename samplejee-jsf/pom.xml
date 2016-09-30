@@ -18,6 +18,13 @@
 			<artifactId>samplejee-core</artifactId>
 			<version>${samplejee.core.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>me.efraimgentil</groupId>
+			<artifactId>samplejee-core-impl</artifactId>
+			<version>${samplejee.core.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>javax</groupId>

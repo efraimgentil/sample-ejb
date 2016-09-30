@@ -31,8 +31,7 @@ or
 	</servlet-mapping>
 </web-app>
 ``` 
-
-First resource
+Getting started with a simple resource, it will responds to the url: "${your_host/projectName}/rest/hello
 
 ```java
 @Path("/hello")
@@ -43,6 +42,40 @@ public class HelloResource {
 		return "Hello darkness my old friend";
 	}
 	
+}
+```
+
+You also can respond with different content-types for the same url, the decision which type will be used will use the header "Accept" that is sent in the request, if no producer is found it will try to respond with the best suited one. (  Remember to add the related content-type providers libraries  )
+
+Obs: You can use DHC to do the request tests 
+
+```java
+@Path("/hello")
+public class HelloResource {
+	
+	private String message = "Hello darkness my old friend"; 
+	
+	@GET
+	@Produces( MediaType.TEXT_PLAIN )
+	public String helloWorld(){
+		return message;
+	}
+	
+	@GET
+	@Produces( MediaType.APPLICATION_XML )
+	public Message helloWorldXml(){
+		return new Message( message );
+	}
+	
+	@GET
+	@Produces( MediaType.APPLICATION_JSON )
+	public Map<String, Object> helloWorldJson(){
+		Map<String, Object> map = new HashMap<>();
+		map.put("message", message );
+		return map;
+	}
+	
+	// ...
 }
 ```
 

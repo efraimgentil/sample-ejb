@@ -12,7 +12,7 @@
 
 	<properties>
 
-		<resteasy-version>2.3.7.Final</resteasy-version>
+		<resteasy-version>3.0.16.Final</resteasy-version>
 	</properties>
 
 	<dependencies>
@@ -40,7 +40,14 @@
 			<version>${resteasy-version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
+			<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxb-provider</artifactId>
+			<version>${resteasy-version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
