@@ -31,7 +31,7 @@ or
 	</servlet-mapping>
 </web-app>
 ``` 
-Getting started with a simple resource, it will responds to the url: "${your_host/projectName}/rest/hello
+Getting started with a simple resource, it will responds to the url: "${your_host/projectName}/rest/hello", notice the annotation @GET it specifies that this method will only respond to HTTP get method, besides the @GET there is also @POST,@PUT,@HEAD,@DELETE and @OPTIONS each representing an HTTP method
 
 ```java
 @Path("/hello")
