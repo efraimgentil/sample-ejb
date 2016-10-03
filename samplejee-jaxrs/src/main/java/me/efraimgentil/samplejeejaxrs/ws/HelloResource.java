@@ -1,5 +1,7 @@
 package me.efraimgentil.samplejeejaxrs.ws;
 
+import java.io.File;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,8 +13,13 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.apache.http.Header;
+import org.jboss.resteasy.core.Headers;
 
 @Path("/hello")
 public class HelloResource {
@@ -38,6 +45,17 @@ public class HelloResource {
 		map.put("message", message );
 		return map;
 	}
+	
+	@GET
+	@Path("download")
+	@Produces( MediaType.TEXT_PLAIN )
+	public Response getFile(){
+		URL resource = HelloResource.class.getResource("/files/hello.txt");
+		return Response.ok( new File( resource.getFile() ) )
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"hello.txt\"")
+				.build();
+	}
+	
 	
 	@XmlRootElement
 	public static class Message{
