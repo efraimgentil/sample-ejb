@@ -1,4 +1,4 @@
-## SAMPLEJEE JSF
+## SAMPLEJEE JAX-RS
 
 This project was made to show some features of JAX-RS (2.0) and to self study
 
