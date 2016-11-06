@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>samplejee-jaxrs</artifactId>
 	<packaging>war</packaging>
-	<name>Sample EJB Consumer</name>
+	<name>Sample Jax-RS</name>
 
 	<properties>
 
@@ -20,10 +20,6 @@
 			<groupId>me.efraimgentil</groupId>
 			<artifactId>samplejee-core</artifactId>
 			<version>${samplejee.core.version}</version>
-			<!-- Mark as provided if you want to test the @Local injection -->
-			<!-- do not forget to remove the initial "_" from the _jboss-deployment-structure.xml 
-				file in the WEB-INF -->
-			<!-- <scope>provided</scope> -->
 		</dependency>
 
 		<dependency>
@@ -33,27 +29,29 @@
 			<scope>provided</scope>
 		</dependency>
 
-
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+
+
+	<!--	<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jackson-provider</artifactId>
 			<version>${resteasy-version}</version>
 			<scope>provided</scope>
 		</dependency>
 		
-			<dependency>
+		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxb-provider</artifactId>
 			<version>${resteasy-version}</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 		
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
-			<scope>provided</scope>
-		</dependency>
 
 	</dependencies>
 

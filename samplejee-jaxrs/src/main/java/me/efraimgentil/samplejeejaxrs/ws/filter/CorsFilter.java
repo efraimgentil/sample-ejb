@@ -1,4 +1,4 @@
-package me.efraimgentil.samplejeejaxrs.ws.filters;
+package me.efraimgentil.samplejeejaxrs.ws.filter;
 
 import java.io.IOException;
 

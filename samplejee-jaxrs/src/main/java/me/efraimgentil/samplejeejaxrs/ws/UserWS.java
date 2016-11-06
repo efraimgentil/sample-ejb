@@ -1,5 +1,6 @@
 package me.efraimgentil.samplejeejaxrs.ws;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -18,7 +19,7 @@ import javax.ws.rs.core.Response.Status;
 import me.efraimgentil.samplejee.core.KnownEJBS;
 import me.efraimgentil.samplejee.core.model.User;
 import me.efraimgentil.samplejee.core.service.UserServiceRemote;
-import me.efraimgentil.samplejeejaxrs.jms.UserDelivery;
+/*import me.efraimgentil.samplejeejaxrs.jms.UserDelivery;*/
 
 @Stateless
 @Path("/user")
@@ -26,10 +27,7 @@ public class UserWS {
 	
 //	@EJB(lookup=KnownEJBS.UserServiceRemote)
 //	UserServiceRemote userService;
-	
-	@EJB
-	UserDelivery delivery;
-	
+
 	@GET
 	@Path("/{id}")
 	@Produces({ MediaType.APPLICATION_JSON })
@@ -48,12 +46,12 @@ public class UserWS {
 	@Path("/")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response findUsers(){
-		List<User> findUsers = null ;// userService.findUsers();
+		List<User> findUsers = Arrays.asList( new User( 1 , "lol" , "teste@gmail.com") , new User(2 , "lole" , "teste@gmail.com" ) );// null ;// userService.findUsers();
 		return Response.status(Status.OK).entity( findUsers ).build();
 	}
 	
 	
-	@GET
+	/*@GET
 	@Path("/jms")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response sendUserToQueue(){
@@ -68,7 +66,7 @@ public class UserWS {
 			return Response.serverError().build();
 		}
 		
-	}
+	}*/
 	
 	
 	

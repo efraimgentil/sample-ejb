@@ -6,7 +6,6 @@
 		<groupId>me.efraimgentil</groupId>
 		<artifactId>samplejee</artifactId>
 		<version>1.0</version>
-		<relativePath>../samplejee/pom.xml</relativePath>
 	</parent>
 	
 	<artifactId>samplejee-core-impl</artifactId>

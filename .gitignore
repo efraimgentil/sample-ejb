@@ -6,3 +6,5 @@ target
 .settings
 .tern-project
 */.tern-project
+*.iml
+*.idea

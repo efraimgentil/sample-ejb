@@ -79,4 +79,63 @@ public class HelloResource {
 }
 ```
 
+
+To the produces annotation work, you will need the respective @Producer for the MediaType,
+if you are using Jboss it uses resteasy, and it probably already have a built in producer at
+your disposal ( at least in wildfly 10 it have ). For example you can create a producer to JSON
+media type like this:
+
+```java
+@Provider
+@Produces( MediaType.APPLICATION_JSON )
+@Consumes( MediaType.APPLICATION_JSON )
+public class GsonMessageHandler implements MessageBodyWriter<Object>, MessageBodyReader<Object> {
+
+  @Override
+  public boolean isReadable(Class<?> aClass, Type type, Annotation[] annotations, MediaType mediaType) {
+    return true;
+  }
+
+  @Override
+  public Object readFrom(Class<Object> aClass, Type type, Annotation[] annotations, MediaType mediaType
+          , MultivaluedMap<String, String> multivaluedMap, InputStream inputStream) throws IOException, WebApplicationException {
+    try( InputStreamReader streamReader = new InputStreamReader(inputStream) ) {
+      return new GsonBuilder().create().fromJson( streamReader , getType(aClass , type ) );
+    }
+  }
+
+  @Override
+  public boolean isWriteable(Class<?> aClass, Type type, Annotation[] annotations, MediaType mediaType) {
+    return true;
+  }
+
+  @Override
+  public long getSize(Object o, Class<?> aClass, Type type, Annotation[] annotations, MediaType mediaType) {
+    return -1;
+  }
+
+  @Override
+  public void writeTo(Object o, Class<?> aClass, Type type, Annotation[] annotations, MediaType mediaType
+          , MultivaluedMap<String, Object> multivaluedMap, OutputStream outputStream) throws IOException, WebApplicationException {
+    try(OutputStreamWriter writer = new OutputStreamWriter( outputStream, "UTF-8" ) ){
+      new GsonBuilder().create().toJson( o , getType(aClass, type) , writer );
+    }
+  }
+
+  public Type getType(  Class<?> aClass, Type type) {
+    Type jsonType;
+    if( aClass.equals( type )) {
+      jsonType = aClass;
+    }else {
+      jsonType = type;
+    }
+    return jsonType;
+  }
+}
+```
+
+Note that in this example we use the Gson library to serialise and deserialise our objetcs.
+See that you need to implements the interfaces MessageBodyWriter<?> and MessageBodyReader<?>
+one represents te writing to a json, for example, and the other for reading from a json, in
+the example, to a object.
   

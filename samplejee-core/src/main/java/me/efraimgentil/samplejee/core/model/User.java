@@ -11,6 +11,12 @@ public class User implements Serializable {
 	
 	public User() { 	}
 
+	public User(Integer id , String username , String email ) {
+		this.email = email;
+		this.username = username;
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
